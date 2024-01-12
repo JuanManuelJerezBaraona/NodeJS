@@ -6,13 +6,14 @@ console.clear();
 // 5 x 2 = 10
 // 5 x 3 = 15
 
+let base = 3;
 let salida = '';
 
 for (let i = 1; i <= 10; i++) {
-    salida += `5 x ${i} = ${5 * i}\n`;
+    salida += `${base} x ${i} = ${base * i}\n`;
 } 
 
-fs.writeFile('tabla-5.txt', salida, (err) => {
+fs.writeFile(`tabla-${base}.txt`, salida, (err) => {
     if (err) throw err;
-    console.log('tabla-5.txt creado!!!');
+    console.log(`tabla-${base}.txt creado!!!`);
 }); 
