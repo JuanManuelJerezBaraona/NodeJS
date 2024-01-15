@@ -1,14 +1,13 @@
 const { crearArchivoTabla } = require('./helpers/multiplicar');
+const argv = require('yargs').argv;
 
 console.clear();
 
-const [ , , arg3 = 'base=5'] = process.argv;
-const [ , base = 5] = arg3.split('=');
-
-console.log(base);
+console.log(process.argv);
+console.log(argv);
 
 // let base = 7;
 
-crearArchivoTabla(base)
-    .then(nombreArchivo => console.log(nombreArchivo, 'creado'))
-    .catch(err => console.log(err));
+// crearArchivoTabla(base)
+//     .then(nombreArchivo => console.log(nombreArchivo, 'creado'))
+//     .catch(err => console.log(err));
