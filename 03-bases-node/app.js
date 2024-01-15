@@ -2,9 +2,9 @@ const { crearArchivoTabla } = require('./helpers/multiplicar');
 
 console.clear();
 
-// 5 x 1 = 5
-// 5 x 2 = 10
-// 5 x 3 = 15
+const [ , , arg3 ] = process.argv;
+
+console.log(arg3);
 
 let base = 7;
 
