@@ -1,12 +1,19 @@
-const http = require('http');
+const express = require('express');
+const app = express();
+const port = 3000;
 
-http.createServer((req, res) => {
+app.get('/', (req, res) => {
+    res.send('Home Page');
+});
 
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
+app.get('/otra-ruta', (req, res) => {
+    res.send('Otra ruta');
+});
 
-    res.write('Hola Mundo');
-    res.end();
+app.get('*', (req, res) => {
+    res.send('404 | Page not found');
+});
 
-}).listen(3000);
-
-console.log('Escuchando el puerto', 3000);
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
+});
