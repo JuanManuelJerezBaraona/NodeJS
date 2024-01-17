@@ -2,9 +2,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('Home Page');
-});
+// Servir contenido estático
+app.use(express.static('public'));
 
 app.get('/otra-ruta', (req, res) => {
     res.send('Otra ruta');
